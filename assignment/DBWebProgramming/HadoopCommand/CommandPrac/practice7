@@ -1,0 +1,13 @@
+#%% Modeling and Managing Data with Impala and Hive
+#Practice: Inserting Selected Records to a Table
+
+impala-shell
+
+## Insert data to other table
+create table device_copy like device;
+insert into device_copy select * from device;
+insert into device_copy select * from device where device_num>5;
+
+
+
+

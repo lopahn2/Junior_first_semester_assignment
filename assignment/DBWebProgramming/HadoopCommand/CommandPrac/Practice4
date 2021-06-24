@@ -1,0 +1,13 @@
+#%% Introduction to Impala and Hive
+#Practice: Hive's Shell
+
+## Import data table into hive location
+Sqoop import --connect jdbc:mysql://localhost/loudacre --username training --password training --fields-terminated-by '\t' --table device --hive-import --warehouse-dir=/user/hive/warehouse
+Sqoop import --connect jdbc:mysql://localhost/loudacre --username training --password training --fields-terminated-by '\t' --table acountdevice --hive-import --warehouse-dir=/user/hive/warehouse
+
+## Connect to the beeline
+beeline -u jdbc:hive2://localhost:10000 -n training -p training
+
+## Check data under the Join condition
+SELECT * FROM device d JOIN accountdevice ad ON (d.device_num = ad.device_id) WHERE device_id = 5;
+

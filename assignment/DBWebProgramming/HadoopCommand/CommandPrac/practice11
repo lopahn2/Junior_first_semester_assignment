@@ -1,0 +1,16 @@
+#%% Data File Partitioning
+#Practice: Static Partitioning
+
+impala-shell
+
+## Create partitioned table
+create external table temp(id int, name string, sal int) partitioned by(city string) location '/loudacre/test';
+
+## Make static partition
+alter table temp add partition(city='hyd');
+alter table temp add partition(city='sec');
+
+## Load data
+load data inpath '/loudacre/test1.txt' into table temp partition(city='hyd');
+load data inpath '/loudacre/test2.txt' into table temp partition(city='sec');
+

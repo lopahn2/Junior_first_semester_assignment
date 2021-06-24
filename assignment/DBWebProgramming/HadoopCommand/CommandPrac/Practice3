@@ -1,0 +1,22 @@
+#%% Introduction to Impala and Hive
+#Practice: Impala Shell
+
+## Impala Shell setup
+dev1/scripts/training_setup_dev1.sh
+sudo service zookeeper-server start
+sudo service hive-server2 start
+
+## Export table from Mysql to the Hive metastore
+## Just Schema imformation
+Sqoop import --connect jdbc:mysql://localhost/loudacre --username training --password training --fields-terminated-by '\t' --table webpage --hive-import
+
+## Connect Impala Shell
+impala-shell
+
+## Check import result
+SELECT * FROM webpage WHERE web_page_file_name LIKE "ifruit%" limit 5;
+
+## Before executing SQL, excute invalidate metadata 
+## For synchronization
+invalidate metadata;
+

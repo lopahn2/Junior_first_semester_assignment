@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formExample-DBWebProgramming</title>
+</head>
+<body>
+    <h1>form Examples</h1>
+    <br/>
+    <p>form definition</p>
+    <form>
+        FirstName:
+        <input type="text" name="fname"/><br/>
+        LastName:
+        <input type="text" name="lname"/><br/>
+    </form>
+    <br/>
+    <br/>
+    <p>form action</p>
+    <form action="" method="GET">
+        FirstName:
+        <input type="text" name="fname"/><br/>
+        LastName:
+        <input type="text" name="lname"/><br/>
+        <input type="submit" value="submit"/>
+    </form>
+    <br/>
+    <br/>
+    <p>check box</p>
+    <form action="" method="GET">
+        <input type="checkbox" name="device" value="iPhone"/>iPhone<br/>
+        <input type="checkbox" name="device" value="iPad"/>iPad<br/>
+        <input type="submit" value="submit"/>
+    </form>
+    <br/>
+    <br/>
+    <p>radio Buttons</p>
+    <form action="" method="GET">
+        <input type="radio" name="device" value="iPhone"/>iPhone<br/>
+        <input type="radio" name="device" value="iPad"/>iPad<br/>
+        <input type="submit" value="submit"/>
+    </form>
+    <br/>
+    <br/>
+    <p>text Boxes</p>
+    <form>
+        <input type="text" name="fullName" size="30" maxlength="50" value="maxlenght is 50"/>
+    </form>
+    <br/>
+    <br/>
+    <p>password</p>
+    <form>
+        PassWord:
+        <input type="password" name="pass" />
+    </form>
+    <br/>
+    <br/>
+    <p>hidden Objects</p>
+    <form>
+        <input type="hidden" name="id" value="a84re"/>
+        <input type="submit" value="submit"/>
+    </form>
+    <br/>
+    <br/>
+    <p>buttons</p>
+    <form>
+        <input type="submit" value="submit"/>
+        <input type="reset" value="reset"/>
+        <input type="button" value="doNothing"/>
+        <input type="button" onclick="alert('print something')" value="dynamic button"/>
+    </form>
+    <br/>
+    <br/>
+    <p>button Tags</p>
+    <form>
+        <button type="button">click me!</button>
+        <!-- type can be button submit reset -->
+    </form>
+    <br/>
+    <br/>
+    <p>text Areas</p>
+    <form>
+        <textarea rows="30" cols="50" name="text">
+            This is the text that you will see and can edit in the area.
+        </textarea>
+    </form>
+    <br/>
+    <br/>
+    <p>menus</p>
+    <form>
+        <select name="device">
+            <option value="iPhone">iPhone</option>
+            <option value="iPad">iPad</option>
+            <option value="iMac">iMac</option>
+        </select>
+    </form>
+    <br/>
+    <br/>
+    <p>Labels</p>
+    <form>
+        <input type="checkbox" name="iPhone" id="iPhone"/>
+        <label for="iPhone">I like iPhone</label><br/>
+        <input type="checkbox" name="iPad" id="iPad"/>
+        <label for="iPad">I like iPad</label><br/>
+    </form>
+</body>
+</html>

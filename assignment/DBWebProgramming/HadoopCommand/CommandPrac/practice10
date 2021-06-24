@@ -1,0 +1,24 @@
+#%% Data File Partitioning
+#Practice: Dynamic Partitioning
+
+## Import table into hive
+Sqoop import --connect jdbc:mysql://localhost/loudacre --username training --password training --fields-terminated-by '\t' --table accounts --hive-import --warehouse-dir=/user/hive/warehouse
+
+impala-shell
+
+## Create table with partitioning
+create external table accounts_by_areacode(fname string, lname string, address string, city string, zipcode string) partitioned by (areacode string) row format delimited fields terminated by ',' location '/loudacre/accounts_by_areacode';
+
+## Insert data into table
+insert overwrite table accounts_by_areacode partition(areacode) select first_name, last_name, address, city, zipcode ,substr(phone_number, 1, 3) as areacode from accounts;
+
+## If Error occured such as Dynamic partition strict mode --
+set hive.exec.dynamic.partition=true;
+
+## Nested partitioning
+create external table accounts_by_nested(fname string, lname stirng, address string, city string, zipcode string) partitioned by (state string, areacode string) row format delimited fields terminated by ',' location '/loudacre/accounts_by_nested';
+
+## Insert data into nested table
+insert overwrite table accounts_by_nested partition(state, areacode) select first_name, last_name, address, city, zipcode ,state, substr(phone_number, 1, 3) as areacode from accounts;
+
+

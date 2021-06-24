@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getRandomMax(max){
+            return Math.floor(Math.random()*max)+1;
+        }
+        let count = 0;
+        while(count !=5){
+            var randomNum = getRandomMax(100);
+            if(randomNum >= 50){
+                window.alert(`Yo, ${randomNum} is greater than or equal to 50`);
+            }else{
+                window.alert(`Hey, ${randomNum} is less than 50`);
+            }
+            count++;
+        }
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

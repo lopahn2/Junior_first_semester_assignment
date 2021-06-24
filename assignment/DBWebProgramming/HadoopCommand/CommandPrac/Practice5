@@ -1,0 +1,48 @@
+#%% Modeling and Managing Data with Impala and Hive
+#%% Create and Drop table practice are skipped.
+#Practice: existing schema
+
+## Connect to the Impala Shell
+impala-shell
+
+## Create table 
+create table device_copy like device;
+
+## Check data info
+select * from device_copy;
+#result will be nothing. we just create table schema
+
+## Insert data into table
+insert into device_copy select * from device;
+
+## Check data info
+select * from device_copy;
+
+## Drop the table
+drop table device_copy;
+
+## Create table under the condition
+create table device_5 as select * from device where device_num = 5;
+
+## Create table under the directory where we want
+create table jobs_2 (id int) location '/user/temp/jobs2';
+
+create external table jobs_3 (id int) location '/user/temp/jobs3';
+
+## Drop the two table
+drop table jobs_2;
+#jobs_2 table is internal. so table is dropped with the hdfs files.
+drop table jobs_3;
+#jobs_3 table is external. so table is dropped and we can not select that table.
+#but in hdfs file is exist.
+
+
+
+
+
+
+
+
+
+
+

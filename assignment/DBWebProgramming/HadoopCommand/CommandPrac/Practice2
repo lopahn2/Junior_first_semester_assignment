@@ -1,0 +1,28 @@
+#%% Importing Relational Data with Sqoop 
+#Practice: Import Incremental Update
+
+## Run Python script
+## Before running, we have to go directory where script in
+
+## Check script file
+vim add_new_accounts.py
+
+## Run
+./add_new_accounts.py
+
+## Connect mysql
+mysql loudacre -u training -p training
+
+## Check max content
+select max(acct_num) from accounts;
+
+## Update into HDFS
+Sqoop import --connect jdbc:mysql://localhost/loudacre --username training --password training --incremental append --null-non-string '\\N' --table accounts --target-dir /loudacre/accounts --check-column acct_num --last-value 129761
+
+## Find updated HDFS file 
+hdfs dfs -ls /loudacre/accounts64
+
+## View files with hadf's cat comment
+hdfs dfs -cat /loudacre/accounts/part-m-0000[456]
+
+

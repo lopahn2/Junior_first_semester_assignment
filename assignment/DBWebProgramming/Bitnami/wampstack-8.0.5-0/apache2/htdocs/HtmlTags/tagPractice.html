@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tagPractice-DBWebProgramming</title>
+</head>
+<body>
+    <h1>Practice:Document Structure</h1>
+    <!-- 1 -->
+    <br/>
+    <br/>
+    <h1>Universal Studios Presents</h1>
+    <h2>Jurassic Park</h2>
+    <p>About</p>
+    <br/>
+    <br/>
+    <!-- 2 -->
+    <p>
+        My Bonnie lies over the ocean.<br/>
+        My Bonnie lies over the sea.<br/>
+        My Bonnie lies over the ocean.<br/>
+        Oh, bring back my Bonnie to me.<br/>
+    </p>
+    <br/>
+    <br/>
+    <!-- 3 -->
+    <p>This is a paragraph</p>
+    <!-- Do not display this text in the browser -->
+    <p>This is another paragraph</p>
+    <br/>
+    <br/>
+    <h1>Practice:Text Formatting</h1>
+    <!-- 1 -->
+    <br/>
+    <br/>
+    <p>
+        WWF's mission is to stop the <strong>degradation</strong> of our planet's natural environment.
+    </p>
+    <!-- 2 -->
+    <br/>
+    <br/>
+    <p>
+        Tokyo is the capital of Japan, the center of the Greater Tokyo Area, and the most populous <em>metropolitan</em> area in the world
+    </p>
+    <!-- 3 -->
+    <br/>
+    <br/>
+    <p>
+        H<sub>2</sub>O is the scientific term for water.
+    </p>
+    <!-- 4 -->
+    <br/>
+    <br/>
+    <p>
+        My favorite color is <del>blue</del> red.
+    </p>
+    <!-- 5 -->
+    <br/>
+    <br/>
+    <p>
+        1<sup>2</sup> = 1<br/>
+        2<sup>2</sup> = 4<br/>
+        3<sup>2</sup> = 9<br/>
+        4<sup>2</sup> = 16<br/>
+        5<sup>2</sup> = 25<br/>
+    </p>
+    <!-- 6 -->
+    <br/>
+    <br/>
+    <pre>
+        <code>
+            public class PIDTester {
+	
+                public static void main(String[] args) {
+                    PIDManagerClass pidM = PIDManagerClass.getInstance();
+                    Scanner scan = new Scanner(System.in);
+                    System.out.println("--------------ITM-19102091-YoungHwan-Phan---------------");
+                    System.out.println("--------------------------------------------------------");
+                    System.out.println("--------------INPUT-POSTIVE-INTEGER-NUMBER--------------");
+                    System.out.println("--------------------------------------------------------");
+                    System.out.println("----------ProcessNum, ProcessTime, ProgramTime----------");
+                    try {
+                        int ThreadNum = scan.nextInt();
+                        int ThreadTime = scan.nextInt();
+                        int ProcessTime = scan.nextInt();
+                        if(ThreadNum<0||ThreadTime<0||ProcessTime <0) {
+                            System.out.println("<<<<Please input 'POSITIVE' 'INTEGER' number>>>>");
+                            System.out.println("<<<<Restart Program please>>>>");
+                            System.exit(0);
+                        }
+                        System.out.println("-----Select Mode : 0.getPID(), OtherNum.getPIDWait()------");
+                        int pidMode = scan.nextInt();
+                        pidM.setPIDManager(ThreadNum, ThreadTime, ProcessTime, pidMode);
+                    }catch(Exception e) {
+                        System.out.println("<<<<Please input 'POSITIVE' 'INTEGER' number>>>>");
+                        System.out.println("<<<<Restart Program please>>>>");
+                    }finally {
+                        scan.close();
+                    }
+                    
+                    
+                    
+            
+                }
+                
+                
+            
+            }
+        </code>
+    </pre>
+    <!-- 7 -->
+    <br/>
+    <br/>
+    <p><del>I do not want to display this text</del></p>
+    <p><ins>I want to display this text</ins></p>
+    <!-- 8 -->
+    <br/>
+    <br/>
+    <address>서울시 강서구 곰달래로</address>
+    <center>
+        <address>
+            서울시 강서구 곰달래로
+        </address>
+    </center>
+    <!-- 9 -->
+    <br/>
+    <br/>
+    <abbr title="anonymous">anoy</abbr><br/>
+    <abbr title="seoulNationalUniversityofScienceAndTechnology">seoultehc</abbr><br/>
+    <abbr title="busdriver">bd</abbr><br/>
+    <abbr title="texidriver">td</abbr><br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Add() {
+            var num1 = Number(window.document.form1.input0.value);
+            var num2 = Number(window.document.form1.input2.value);
+            var result = num1+num2;
+            window.document.form1.input1.value = "+";
+            window.document.form1.input3.value = result;
+            
+            
+            
+            
+
+        }
+        function Sub() {
+            var num1 = Number(window.document.form1.input0.value);
+            var num2 = Number(window.document.form1.input2.value);
+            var result = num1-num2;
+            window.document.form1.input1.value = "-";
+            window.document.form1.input3.value = result;
+            
+            
+            
+        }
+        function Mul() {
+            var num1 = Number(window.document.form1.input0.value);
+            var num2 = Number(window.document.form1.input2.value);
+            var result = num1*num2;
+            window.document.form1.input1.value = "*";
+            window.document.form1.input3.value = result;
+            
+            
+        }
+        function Div() {
+            var num1 = Number(window.document.form1.input0.value);
+            var num2 = Number(window.document.form1.input2.value);
+            if(num2 == 0){
+                window.alert("Dividen zero error.");
+                
+            }else{
+                var result = num1/num2;
+                window.document.form1.input1.value = "/";
+                window.document.form1.input3.value = result;
+                
+                
+            }
+            
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <form name="form1">
+        <input type="text" name="input0"  value="" size="5"/>
+        <input type="text" name="input1" value="" size="1"/>
+        <input type="text" name="input2"  value="" size="5"/>
+        =
+        <input type="text" name="input3"  value="" size="5"/>
+    </form>
+    <form>
+        <input type="button" value="Add" onclick="Add()"/>
+        <input type="button" value="Sub" onclick="Sub()"/>
+        <input type="button" value="Mul" onclick="Mul()"/>
+        <input type="button" value="Div" onclick="Div()"/>
+    </form>
+</body>
+</html>
